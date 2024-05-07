@@ -17,7 +17,7 @@ export const main = handler(async (event) => {
         TableName: Table.Notes.tableName,
             Item: {
                 //Attributes of the item to be created
-                userID: "123", //The ID of the author
+                userID: event.requestContext.authorizer?.iam.cognitoIdentity.identityId, //The ID of the author
                 noteID: uuid.v1(), //The unique uuid
                 content: data.content, //Parsed from the request body
                 attachment: data.attachment, //Parsed from the request body
