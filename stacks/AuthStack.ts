@@ -28,9 +28,9 @@ export function AuthStack({ stack, app }: StackContext) {
     //Show the auth resources in the output
     stack.addOutputs({
         Region: app.region,
-        UserPoolID: auth.userPoolId,
-        UserPoolClientID: auth.userPoolClientId,
-        IdentityPoolID: auth.cognitoIdentityPoolId,
+        UserPoolId: auth.userPoolId,
+        UserPoolClientId: auth.userPoolClientId,
+        IdentityPoolId: auth.cognitoIdentityPoolId,
     });
 
     return {
